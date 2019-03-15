@@ -1,0 +1,510 @@
+*{
+    padding:0; 
+    margin:0;
+    box-sizing: border-box;
+}
+.header{
+    width:100%;
+    height:570px;
+    padding:5px;
+    background:url('../images/vuejs.jpg')  no-repeat;
+    background-size:100% auto;
+    background-position:center center;
+    
+    
+
+    .menu{
+        /*background:cyan;*/
+        width:530px;
+        margin:2px;
+        height:60px;
+        display:flex;
+    }
+
+        .nav{
+            background:pink;
+            margin:30px;
+            flex:1 0 140px;;
+            
+            ul{
+                display:flex;
+                list-style:none;
+                font-family:'Hind Siliguri', sans-serif;
+                font-size:14px;
+                font-weight: 700;
+                animation-name:move;
+                animation-duration:2s;
+                /*animation-iteration-count:3;*/
+            }
+
+            li:hover{
+                border-bottom:solid 4px black ;
+                padding:5px;
+            }
+
+            li:nth-child(1):hover{
+                white-space: nowrap;
+                
+            }
+
+            a{
+                text-decoration:none;
+            }
+
+            li+li{
+                margin-left:20px;
+            }
+        
+        }
+
+        @keyframes move{
+            0%{
+                opacity:0;
+                transform: translateX(-100px);
+            }
+
+            80%{
+                transform:translateX(4px);
+            }
+
+            100%{
+                opacity:1;
+                transform:translate(0);
+            }
+
+        }
+
+        .social{
+            /*background:red;*/
+            margin:15px;
+            flex:1;
+            position:relative;
+            left:800px;
+
+             ul {
+                list-style:none;
+                display:flex;
+                animation-name:moveright;
+                animation-duration:2s;
+            }
+
+            i{
+                display:block;
+                width:30px;
+                height:30px;
+                line-height:50px;
+                font-size:15px;
+                margin-left:10px;
+                border-radius:50%;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                background:#ffff;
+                color:gray;
+                position:relative;
+                left:80px;
+                animation:move 5s;
+
+            }
+
+                #facebook:hover{
+                    background-color:#3b5999;
+                    color:#ffff;
+                }
+                
+                #insta:hover{
+                    background:linear-gradient(to right,#f46f30,#c32aa3);
+                    color:#fff;
+                }
+
+
+            a[href]{
+                text-decoration:none;
+            }
+
+        }
+
+        @keyframes moveright{
+            0%{
+                opacity:0;
+                transform: translateX(100px);
+            }
+
+            80%{
+                transform:translateX(4px);
+            }
+
+            100%{
+                opacity:1;
+                transform:translate(0);
+            }
+        }
+
+
+
+}
+.article{
+    /*background:red;*/
+    margin:70px 30px;
+    display:flex;
+
+        .images{
+            /*background:pink;*/
+            flex:1;
+
+            .title{
+                /*background:cyan;*/
+                margin:25px 25px 50px;;
+                text-align:right;
+                font-family:'Hind Siliguri', sans-serif;
+                font-size:25px;
+            }
+
+            p{
+                /*background:red;*/
+                color:gray;
+            }
+
+            .left {
+                width:490px;
+                height:410px;
+            
+            
+                img{
+                    width:100%;
+                    height:100%;
+                    
+                }
+            }
+
+            .right {
+                background:cyan;
+                width:310px;
+                height:320px;
+                position:relative;
+                bottom:190px;
+                left:305px;
+
+                img{
+                    width:100%;
+                    height:100%;
+                }
+            }
+        }
+
+        .text{
+            /*background:blue;*/
+            flex:1;
+            margin-left:100px;
+
+            .text-1{
+                font-family:'Hind Siliguri', sans-serif;
+                font-size:20px;
+                margin-top:35px;
+                font-weight:700;
+            }
+        }
+
+        .btn:link , .btn:visited {
+                font-family:'Hind Siliguri', sans-serif;
+                font-weight:700;
+                font-size:20px;
+                text-decoration:none;
+                padding:15px 40px;
+                display:inline-block;
+                border-radius: 100px;
+                transition:all .2s;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+                position:relative;
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+            box-shadow: 0 10px 20px #0B3861;
+            opacity:.5;
+        }
+
+        .btn:active{
+            transform:translateY(-1px);
+            box-shadow: 4px 5px 10px #0B3861;
+            opacity:.5;
+        }
+
+        .btn-work{
+            margin-top:30px;
+            background-color:#fff;
+            color:black;
+        }
+
+        .btn::after{
+            content:"";
+            display:inline-block;
+            height:100%;
+            width:100%;
+            border-radius:100px;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:-1;
+            transition:all .4s;
+        }
+
+        .btn-work::after{
+            background-color:#0B3861;
+        }
+
+        .btn:hover::after{
+            transform:scaleX(1.4) scaleY(1.4);
+            opacity:0;
+        }
+            
+        
+         
+}
+
+.boxes{
+    width:1320px;
+    height:195px;
+    margin:20px;
+    /*background:cyan;*/
+    display:flex;
+    perspective:150rem;
+    -moz-perspective:150rem;
+    position:relative;
+
+    .col{
+        /*background:pink;*/
+        width:calc(100% /5);
+       
+        .side{
+            width:254px;
+            height:195px;
+            background:#fff;
+            transition: all .8s;
+            display:block;
+            border-radius:10px;
+            box-shadow:0 15px 10px rgba(0,0,0,0.3);
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            backface-visibility: hidden;
+        }
+
+            .front{
+                background: #ffff;
+                
+            }
+
+            .back{
+                background:rgba(31,155,108,.5);
+                transform:rotateY(180deg);
+                position:relative;
+                right:2px;
+
+                p{
+                    margin:20px;
+                    position:relative;
+                    top:15px;
+                }
+
+                .back-1{
+                    position:relative;
+                    top:56px;
+                }
+
+                ul{
+                    margin:20px 40px;
+                }
+
+            }
+
+        &:hover .front{
+            transform:rotateY(180deg);
+        }
+
+        &:hover .back{
+            transform:rotateY(0);
+        }
+    }
+    
+
+
+    
+
+    div +div{
+        margin-left:15px;
+    }
+
+    .box{
+        position:relative;
+        bottom:150px;
+        left:270px;
+        
+    }
+
+    .box-1{
+        
+        position:relative;
+        top:200px;
+    }
+
+    .center{
+        position:relative;
+        top:38px;
+        text-align:center;
+
+        h3{
+            font-weight:100;
+            margin:40px;
+            font-family:'Hind Siliguri', sans-serif;
+        }
+
+         .btn:link , .btn:visited {
+                font-family:'Hind Siliguri', sans-serif;
+                font-weight:700;
+                font-size:20px;
+                text-decoration:none;
+                padding:15px 40px;
+                display:inline-block;
+                border-radius:30px;
+                transition:all .2s;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+                position:relative;
+                bottom:50px;
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+            box-shadow: 0 10px 20px #0B3861;
+            opacity:.5;
+        }
+
+        .btn:active{
+            transform:translateY(-1px);
+            box-shadow: 4px 5px 10px #0B3861;
+            opacity:.5;
+        }
+
+        .btn-work{
+            margin-top:30px;
+            background-color:#0B3861;
+            color:#fff;
+        }
+
+        .btn::after{
+            content:"";
+            display:inline-block;
+            height:100%;
+            width:100%;
+            border-radius:30px;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:-1;
+            transition:all .4s;
+        }
+
+        .btn-work::after{
+            background-color:#04B4AE;
+        }
+
+        .btn:hover::after{
+            transform:scaleX(1.4) scaleY(1.4);
+            opacity:0;
+        }
+    }
+
+    .boxright{
+        position:relative;
+        top:200px;
+       
+
+    }
+
+    .boxright-1{
+        position:relative;
+        bottom:150px;
+        right:270px;
+
+    }
+
+    .cards{
+        position:relative;
+        top:45px;
+        left:110px;
+        font-size:50px;
+        color:gray;
+        opacity:0.4;
+
+    }
+
+    h1{
+        text-align:center;
+        position:relative;
+        top:35px;
+
+    }
+
+
+
+}
+
+
+.slider{
+    position:relative;
+    top:300px;
+    left:350px;
+    width:600px;
+    height:300px;
+    margin:60px;
+    background:#fff;
+
+    .swiper-container {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+
+  
+            .swiper-slide {
+                width:100%;
+                height:100%;
+                background-color:#0B3861;
+                opacity:.8;
+                
+            
+
+                div.swiper-card{
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    flex-direction:column;
+                    
+        
+                    img{
+                        width:120px;
+                        height:150px;
+                        position:relative;
+                        top:55px;
+                    }
+        
+                    h3{
+                        font-size: 24px;
+                        position:relative;
+                        top:72px;
+                        color:#fff;
+
+                    }
+
+                    .swiper-card1{
+                        margin-left:25px;
+                    }
+                }
+            }
+        
+    }
+}   
